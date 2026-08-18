@@ -19,7 +19,7 @@ func EvaluateVesselCanBeReserved(ctx Context) (Result, error) {
 			missing = append(missing, document)
 		}
 	}
-	if len(missing) > 1 {
+	if len(missing) > 0 {
 		result := deny("vessel_documents", "vessel inspection or insurance is not valid")
 		result.IDs = missing
 		return result, nil
